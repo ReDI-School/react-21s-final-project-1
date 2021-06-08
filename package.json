@@ -20,8 +20,12 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "react/prop-types": 0
+    }
   },
   "browserslist": {
     "production": [
@@ -34,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-react": "^7.24.0"
   }
 }

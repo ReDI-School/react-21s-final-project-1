@@ -1,25 +1,28 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { useEffect, useState } from "react";
+import './App.css';
+import { React } from 'react';
+import { useEffect, useState } from 'react';
+import Resturant from './components/resturant';
 
 function App() {
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
   useEffect(() => {
     async function loadData() {
-      const response = await fetch('https://redi-final-restaurants.herokuapp.com/restaurants')
-      const data = await response.json()
-      setData(data)
+      const response = await fetch(
+        'https://redi-final-restaurants.herokuapp.com/restaurants'
+      );
+      const data = await response.json();
+      setData(data);
     }
-    loadData()
-  }, [])
-  console.log(data)
+    loadData();
+  }, []);
+  console.log(data);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello Team 1!</h1>
-      </header>
+    <div className='App'>
+      {data &&
+        data.results.map((resturant) => (
+          <Resturant key={resturant.id} details={resturant} />
+        ))}
     </div>
   );
 }
