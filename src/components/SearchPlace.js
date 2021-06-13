@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import SearchBar from './SearchBar';
-import ListOfRestaurants from './ListOfRestaurants';
+import React, { useState, useEffect } from "react";
+import SearchBar from "./SearchBar";
+import ListOfRestaurants from "./ListOfRestaurants";
 
 const SearchPlace = (props) => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [resturantListDefault, setResturantListDefault] = useState();
   const [resturantList, setResturantList] = useState();
 
@@ -11,7 +11,7 @@ const SearchPlace = (props) => {
   useEffect(() => {
     async function loadData() {
       const response = await fetch(
-        'https://redi-final-restaurants.herokuapp.com/restaurants/'
+        "https://redi-final-restaurants.herokuapp.com/restaurants/"
       );
       const data = await response.json();
       setData(data);
@@ -21,24 +21,20 @@ const SearchPlace = (props) => {
   console.log(data);
 
   const updateInput = async (input) => {
-     const filtered = resturantListDefault.filter(results => {
-      return results.name.toLowerCase().includes(input.toLowerCase())
-     })
-     setInput(input);
-     setResturantList(filtered);
-  }
+    const filtered = resturantListDefault.filter((results) => {
+      return results.name.toLowerCase().includes(input.toLowerCase());
+    });
+    setInput(input);
+    setResturantList(filtered);
+  };
 
   //useEffect( () => {fetchData()},[]);
-	
+
   return (
     <>
-      <SearchBar 
-       input={input} 
-       onChange={updateInput}
-      />
-      <ListOfRestaurants resturantList={resturantList}/>
+      <SearchBar input={input} onChange={updateInput} />
     </>
-   );
-}
+  );
+};
 
-export default SearchPlace
+export default SearchPlace;

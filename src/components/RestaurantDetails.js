@@ -1,59 +1,74 @@
-import React, { useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 // I have to target the id of each restaurant
 
 function RestaurantDetails() {
-  const { data } = useLocation();
-  let history = useHistory();
-  if (!data) {
-    history.push('/ListOfRestaurants');
-  }
+  const { id } = useParams();
+
+  const [restaurant, setRestaurant] = useState(null);
+
   useEffect(() => {
-    async function loadRest() {}
-    loadRest();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    async function loadData() {
+      const response = await fetch(
+        "https://redi-final-restaurants.herokuapp.com/restaurants/"
+      );
+      const responseJson = await response.json();
+      setRestaurant(responseJson.results.find((rest) => rest.id === id));
+    }
+    loadData();
+  }, []);
 
   /// here you can show the restaurant data, you can apply your styles here.
-  return (
+  return restaurant ? (
     <div>
-      {data && data.name && <h3>Name: {data.name}</h3>}
-      {data && data.cuisine && <h4>Cuisine: {data.cuisine} </h4>}
-      {data && data.formatted_address && (
-        <h5>Address: {data.formatted_address}</h5>
+      {restaurant && restaurant.name && <h3>Name: {restaurant.name}</h3>}
+      {restaurant && restaurant.cuisine && (
+        <h4>Cuisine: {restaurant.cuisine} </h4>
       )}
-      {data && data.social && (
+      {restaurant && restaurant.formatted_address && (
+        <h5>Address: {restaurant.formatted_address}</h5>
+      )}
+      {restaurant && restaurant.social && (
         <h5>
-          Email: {data.social.email} Phone: {data.social.phone}
+          Email: {restaurant.social.email} Phone: {restaurant.social.phone}
         </h5>
       )}
-      {data.photos &&
-        data.photos[0] &&
-        data.photos[0].links &&
-        data.photos[0].links[0] && (
-          <img src={data.photos[0].links[0]} alt='icon' />
+      {restaurant.photos &&
+        restaurant.photos[0] &&
+        restaurant.photos[0].links &&
+        restaurant.photos[0].links[0] && (
+          <img src={restaurant.photos[0].links[0]} alt="icon" />
         )}
-      {data && data.price_level && <h6>Price level {data.price_level}</h6>}
-      {data && data.rating && <h6>Rating: {data.rating}</h6>}
-
-      {data && data.opening_hours && data.opening_hours.open_now && (
-        <div>{data.opening_hours.open_now ? 'open' : 'closed'}</div>
+      {restaurant && restaurant.price_level && (
+        <h6>Price level {restaurant.price_level}</h6>
       )}
-      {data &&
-        data.opening_hours &&
-        data.opening_hours.hours &&
-        data.opening_hours.hours.open &&
-        data.opening_hours.hours.close && (
+      {restaurant && restaurant.rating && <h6>Rating: {restaurant.rating}</h6>}
+
+      {restaurant &&
+        restaurant.opening_hours &&
+        restaurant.opening_hours.open_now && (
+          <div>{restaurant.opening_hours.open_now ? "open" : "closed"}</div>
+        )}
+      {restaurant &&
+        restaurant.opening_hours &&
+        restaurant.opening_hours.hours &&
+        restaurant.opening_hours.hours.open &&
+        restaurant.opening_hours.hours.close && (
           <div>
-            <h4>{data.opening_hours.hours.open}</h4>
-            <h4>{data.opening_hours.hours.close}</h4>
+            <h4>{restaurant.opening_hours.hours.open}</h4>
+            <h4>{restaurant.opening_hours.hours.close}</h4>
           </div>
         )}
 
-      {data && data.pickup && <div>{data.pickup ? 'pickup' : null} </div>}
-      {data && data.delivery && <div>{data.delivery ? 'delivery' : null}</div>}
+      {restaurant && restaurant.pickup && (
+        <div>{restaurant.pickup ? "pickup" : null} </div>
+      )}
+      {restaurant && restaurant.delivery && (
+        <div>{restaurant.delivery ? "delivery" : null}</div>
+      )}
     </div>
-  );
+  ) : null;
 }
 
 // --------------------------------------------------------

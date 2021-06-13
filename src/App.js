@@ -1,13 +1,13 @@
-import './App.css';
-import { React } from 'react';
-import ListOfRestaurants from './components/ListOfRestaurants';
-import Navbar from './components/Navbar';
-import SearchPlace from './components/SearchPlace';
-import About from './components/About';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import "./App.css";
+import { React } from "react";
+import ListOfRestaurants from "./components/ListOfRestaurants";
+import Navbar from "./components/Navbar";
+import SearchPlace from "./components/SearchPlace";
+import About from "./components/About";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Restaurant from './components/Restaurant';
-import RestaurantDetails from './components/RestaurantDetails';
-import HomePageGif from "./assets/homepage-gif.gif"
+import RestaurantDetails from "./components/RestaurantDetails";
+import HomePageGif from "./assets/homepage-gif.gif";
 
 function App() {
   // const [data, setData] = useState(null);
@@ -34,18 +34,20 @@ function App() {
 
   return (
     <Router>
-      <div className='App'>
+      <div className="App">
         <Navbar />
-        <img src={HomePageGif} />
-        <SearchPlace />
         <Switch>
           <Route
-            path='/ListOfRestaurants'
+            path="/ListOfRestaurants"
             exact
             component={ListOfRestaurants}
           />
-          <Route className="restaurant-details" path='/ListOfRestaurants/:id' component={RestaurantDetails} />
-          <Route path='/About' component={About} />
+          <Route
+            className="restaurant-details"
+            path="/ListOfRestaurants/:id"
+            component={RestaurantDetails}
+          />
+          <Route path="/About" component={About} />
         </Switch>
       </div>
     </Router>

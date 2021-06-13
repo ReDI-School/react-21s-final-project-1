@@ -1,65 +1,59 @@
 // the component is for display the list of the restaurants names and cuisine
-import React from 'react';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import SearchPlace from "../components/SearchPlace";
+
+import HomePageGif from "../assets/homepage-gif.gif";
 
 function ListOfRestaurants() {
-  const [data, setData] = useState(null);
+  const [restaurants, setRestaurants] = useState(null);
+  const [filteredRestaurants, setFilteredRestaurants] = useState(null);
+
   useEffect(() => {
     async function loadData() {
       const response = await fetch(
-        'https://redi-final-restaurants.herokuapp.com/restaurants/'
+        "https://redi-final-restaurants.herokuapp.com/restaurants/"
       );
-      const data = await response.json();
-      setData(data);
+      const responseJson = await response.json();
+      setRestaurants(responseJson.results);
+      setFilteredRestaurants(responseJson.results);
     }
     loadData();
   }, []);
-  console.log(data);
 
-  // taking each Restaurant as link and show it in the list
-  const Home = () => (
+  const handleFilterAll = () => {
+    setFilteredRestaurants(restaurants);
+  };
+
+  const handleFilterPickup = () => {
+    const pickupRestaurants = restaurants.filter(
+      (restaurant) => restaurant.pickup
+    );
+
+    setFilteredRestaurants(pickupRestaurants);
+  };
+
+  return (
     <div>
-      {data &&
-        data.results.map((restaurant) => (
+      <img src={HomePageGif} />
+      <button onClick={handleFilterAll}>All Restaurants</button>
+      <button onClick={handleFilterPickup}>Pickup Restaurants</button>
+      <SearchPlace />
+      {filteredRestaurants &&
+        filteredRestaurants.map((restaurant) => (
           <div className="restaurantCard" key={restaurant.id}>
-          
             <img src={restaurant.photos[0].links[0]} />
-          
+
             <h1 className="restaurantTitle">
-             <Link
-                to={{
-                  pathname: `/ListOfRestaurants/${restaurant.id}`,
-                  data: {
-                    name: restaurant.name,
-                    cuisine: restaurant.cuisine,
-                    formatted_address: restaurant.formatted_address,
-                    social: restaurant.social,
-                    photos: restaurant.photos,
-                    price_level: restaurant.price_level,
-                    rating: restaurant.rating,
-                    opening_hours: {
-                      opening_hours: restaurant.opening_hours,
-                      hours: {
-                        open: restaurant.opening_hours.open,
-                        close: restaurant.opening_hours.close,
-                      },
-                    },
-                    pickup: restaurant.pickup,
-                    delivery: restaurant.delivery,
-                  },
-                }}>
+              <Link to={`/ListOfRestaurants/${restaurant.id}`}>
                 {restaurant.name}
               </Link>
             </h1>
             <h3 className="restaurantCousine">{restaurant.cuisine}</h3>
           </div>
         ))}
-    </div>
-  );
-  return (
-    <div>
-      <Home  />
     </div>
   );
 }
