@@ -22,9 +22,12 @@ function ListOfRestaurants() {
     <div>
       {data &&
         data.results.map((restaurant) => (
-          <div key={restaurant.id}>
-            <h1>
-              <Link
+          <div className="restaurantCard" key={restaurant.id}>
+          
+            <img src={restaurant.photos[0].links[0]} />
+          
+            <h1 className="restaurantTitle">
+             <Link
                 to={{
                   pathname: `/ListOfRestaurants/${restaurant.id}`,
                   data: {
@@ -49,14 +52,14 @@ function ListOfRestaurants() {
                 {restaurant.name}
               </Link>
             </h1>
-            <h3>{restaurant.cuisine}</h3>
+            <h3 className="restaurantCousine">{restaurant.cuisine}</h3>
           </div>
         ))}
     </div>
   );
   return (
     <div>
-      <Home />
+      <Home  />
     </div>
   );
 }

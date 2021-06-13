@@ -12,9 +12,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   min-height: 10vh;
-  background-color: rgb(166, 229, 130);
+  background-color: #FF5952;
   color: #fff;
 }
+
 .Nav-links {
   left: 20px;
   margin: 20px;
@@ -23,3 +24,25 @@ nav {
   justify-content: space-between;
   list-style: none;
 }
+
+
+.Search-bar{
+  top: 559px;
+  left: 269px;
+  width: 812px;
+  height: 63px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border-radius: 32px;
+  opacity: 1;
+  border: none;
+  }
+
+  .Search-bar:focus {
+border: none;
+  }  
+
+  .restaurantCard {
+    display: grid;
+  }
+
+  
