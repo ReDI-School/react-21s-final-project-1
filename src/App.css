@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --first-color: #ffff;
+}
 
 .App {
   text-align: center;
@@ -12,7 +15,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   min-height: 10vh;
-  background-color: #FF5952;
+  /* background-color: var(--first-color); */
+  background-color: #ff5952;
   color: #fff;
 }
 
@@ -25,24 +29,38 @@ nav {
   list-style: none;
 }
 
-
-.Search-bar{
+.Search-bar {
   top: 559px;
   left: 269px;
   width: 812px;
   height: 63px;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 32px;
   opacity: 1;
   border: none;
-  }
+}
 
-  .Search-bar:focus {
-border: none;
-  }  
+.Search-bar:focus {
+  border: none;
+}
 
-  .restaurantCard {
-    display: grid;
-  }
+.restaurantCard {
+  display: grid;
+}
 
-  
+.map {
+  width: 800px;
+  height: 500px;
+}
+.singleRestaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.location-icon {
+  font-size: 2rem;
+  color: red;
+}
