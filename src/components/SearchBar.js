@@ -14,14 +14,11 @@ const SearchBar = () => {
     loadData();
   }, []);
   console.log(input);
+  const handelSearchedRestaurants = (e) => {
+    const search = e.target.value;
 
-  const handelSearch = (e) => {
-    e.preventDefault();
-    setInput(e.target.Value);
-  };
-  const handelSearchedRestaurants = () => {
     const searchedRestaurants = input.filter((restaurant) =>
-      restaurant.name.toLowerCase().match(input)
+      restaurant.name.toLowerCase().includes(search.toLowerCase())
     );
     setInput(searchedRestaurants);
     console.log(searchedRestaurants);
@@ -31,11 +28,10 @@ const SearchBar = () => {
       <input
         type='text'
         placeholder='Find your restaurant'
-        onChange={handelSearch}
-        value={handelSearchedRestaurants}
+        onChange={handelSearchedRestaurants}
+        // value={handelSearchedRestaurants}
       />
     </div>
   );
 };
-
 export default SearchBar;
