@@ -38,7 +38,7 @@ function ListOfRestaurants() {
   // Open-now Restaurant
   const handleFilterOpen = () => {
     const openRestaurants = restaurants.filter(
-      (restaurant) => restaurant.opening_hours.open_now === false
+      (restaurant) => restaurant.opening_hours.open_now
     );
 
     setFilteredRestaurants(openRestaurants);
