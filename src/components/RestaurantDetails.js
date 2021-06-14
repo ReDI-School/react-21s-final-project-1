@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Map from './Map';
 
 // I have to target the id of each restaurant
 
 function RestaurantDetails() {
   const { id } = useParams();
-
   const [restaurant, setRestaurant] = useState(null);
+  const [eventData, setEventData] = useState([]);
 
   useEffect(() => {
     async function loadData() {
@@ -15,13 +16,14 @@ function RestaurantDetails() {
       );
       const responseJson = await response.json();
       setRestaurant(responseJson.results.find((rest) => rest.id === id));
+      setEventData(responseJson.results.find((rest) => rest.id === id));
     }
     loadData();
   }, [id]); // eslint-disable-next-line
 
   /// here you can show the restaurant data, you can apply your styles here.
   return restaurant ? (
-    <div>
+    <div className='singleRestaurant'>
       {restaurant && restaurant.name && <h3>Name: {restaurant.name}</h3>}
       {restaurant && restaurant.cuisine && (
         <h4>Cuisine: {restaurant.cuisine} </h4>
@@ -67,6 +69,8 @@ function RestaurantDetails() {
       {restaurant && restaurant.delivery && (
         <div>{restaurant.delivery ? 'delivery' : null}</div>
       )}
+      {/* <h1>{restaurant.geometry.location.lat}</h1> */}
+      <Map eventData={eventData} />
     </div>
   ) : null;
 }
