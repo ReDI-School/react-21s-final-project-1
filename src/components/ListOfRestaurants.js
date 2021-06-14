@@ -2,7 +2,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar';
 import HomePageGif from '../assets/homepage-gif.gif';
 
 function ListOfRestaurants() {
@@ -54,6 +53,24 @@ function ListOfRestaurants() {
     setFilteredRestaurants(deliveryRestaurants);
     console.log(deliveryRestaurants);
   };
+  // Open-now Restaurant
+  const handleFilterClose = () => {
+    const closeRestaurants = restaurants.filter(
+      (restaurant) => restaurant.opening_hours.open_now === false
+    );
+
+    setFilteredRestaurants(closeRestaurants);
+    console.log(closeRestaurants);
+  };
+  // filter the list using the user input
+  const onSearchedRestaurants = (e) => {
+    const search = e.target.value;
+
+    const searchedRestaurants = restaurants.filter((restaurant) =>
+      restaurant.name.toLowerCase().includes(search.toLowerCase())
+    );
+    setFilteredRestaurants(searchedRestaurants);
+  };
 
   return (
     <div>
@@ -63,19 +80,32 @@ function ListOfRestaurants() {
         <button onClick={handleFilterOpen}>Open </button>
         <button onClick={handleFilterPickup}>Pickup </button>
         <button onClick={handleFilterDelivery}>Delivery </button>
-        <SearchBar />
+        <button onClick={handleFilterClose}>Closed</button>
+        <input
+          type='text'
+          placeholder='Find your restaurant'
+          onChange={onSearchedRestaurants}
+        />
       </div>
       {filteredRestaurants &&
         filteredRestaurants.map((restaurant) => (
           <div key={restaurant.id}>
-            <img src={restaurant.photos[0].links[0]} alt='' />
+            <img
+              style={{ width: 300, height: 300 }}
+              src={restaurant.photos[0].links[0]}
+              alt=''
+            />
 
             <h1 className='restaurantTitle'>
               <Link to={`/ListOfRestaurants/${restaurant.id}`}>
                 {restaurant.name}
               </Link>
             </h1>
-            <h3>{restaurant.cuisine}</h3>
+            <div>
+              <h3>{restaurant.cuisine}</h3>
+              <h4>Rating:{restaurant.rating}</h4>
+              <h4>Price level: {restaurant.price_level}</h4>
+            </div>
           </div>
         ))}
     </div>
