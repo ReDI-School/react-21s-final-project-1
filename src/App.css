@@ -24,9 +24,6 @@ h6,
 p {
   color: var(--text-color);
 }
-#root {
-  background-color: var(--background-color);
-}
 body,
 .big-list,
 .App {
