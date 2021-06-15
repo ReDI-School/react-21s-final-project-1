@@ -73,7 +73,7 @@ function ListOfRestaurants() {
   };
 
   return (
-    <div>
+    <div className='big-list'>
       <div>
         <img src={HomePageGif} alt='' />
         <button onClick={handleFilterAll}>All </button>
