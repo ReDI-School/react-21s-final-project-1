@@ -7,7 +7,6 @@ import Map from './Map';
 function RestaurantDetails() {
   const { id } = useParams();
   const [restaurant, setRestaurant] = useState(null);
-  const [eventData, setEventData] = useState([]);
 
   useEffect(() => {
     async function loadData() {
@@ -16,7 +15,6 @@ function RestaurantDetails() {
       );
       const responseJson = await response.json();
       setRestaurant(responseJson.results.find((rest) => rest.id === id));
-      setEventData(responseJson.results.find((rest) => rest.id === id));
     }
     loadData();
   }, [id]); // eslint-disable-next-line
@@ -70,7 +68,8 @@ function RestaurantDetails() {
         <div>{restaurant.delivery ? 'delivery' : null}</div>
       )}
       {/* <h1>{restaurant.geometry.location.lat}</h1> */}
-      <Map eventData={eventData} />
+
+      <Map restaurants={[restaurant]} />
     </div>
   ) : null;
 }
