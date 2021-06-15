@@ -2,11 +2,39 @@
   box-sizing: border-box;
 }
 :root {
-  --first-color: #ffff;
+  --text-color: rgb(3, 3, 3);
+  --Nav-text-color: #ffff;
+  --background-color: rgb(224, 215, 215);
+  --nav-background-color: #ff5952;
+  --search-bar-background-color: #ffff;
 }
-
+.dark {
+  --text-color: rgb(255, 251, 251);
+  --Nav-text-color: rgb(255, 251, 251);
+  --background-color: rgb(82, 80, 80);
+  --nav-background-color: #793d3b;
+  --search-bar-background-color: rgb(150, 125, 125);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--text-color);
+}
+#root {
+  background-color: var(--background-color);
+}
+body,
+.big-list,
 .App {
   text-align: center;
+  background-color: var(--background-color);
+}
+.about-page {
+  background-color: var(--background-color);
 }
 
 nav {
@@ -16,8 +44,8 @@ nav {
   align-items: center;
   min-height: 10vh;
   /* background-color: var(--first-color); */
-  background-color: #ff5952;
-  color: #fff;
+  background-color: var(--nav-background-color);
+  color: var(--text-color);
 }
 
 .Nav-links {
@@ -27,6 +55,12 @@ nav {
   display: flex;
   justify-content: space-between;
   list-style: none;
+  color: var(--text-color);
+}
+.link,
+a {
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 .Search-bar {
@@ -34,7 +68,7 @@ nav {
   left: 269px;
   width: 812px;
   height: 63px;
-  background: #ffffff 0% 0% no-repeat padding-box;
+  background: var(--search-bar-background-color) 0% 0% no-repeat padding-box;
   border-radius: 32px;
   opacity: 1;
   border: none;
