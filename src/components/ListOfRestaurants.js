@@ -80,6 +80,8 @@ function ListOfRestaurants() {
           <h3 className='text-under-gif'>Berlin local restaurants</h3>
           <div className='Search-Buttons'>
             <input
+              autoFocus='off'
+              autoComplete=''
               className='Search-bar'
               type='text'
               placeholder='Find your restaurant'
