@@ -6,7 +6,8 @@ import styled from 'styled-components';
 
 const Toggle = styled.button`
   cursor: pointer;
-  height: 50px;
+  // height: 50px;
+  margin-right: -135%;
   width: 50px;
   border-radius: 50%;
   border: none;
@@ -22,19 +23,18 @@ const Navbar = ({ isDarkTheme, setDarkTheme }) => {
   console.log(setDarkTheme);
   return (
     <nav>
-      <h3>Localista</h3>
       <ul className='Nav-links'>
         <Link to='/ListOfRestaurants'>
-          <li className='link'>Home</li>
+        <li className="logo-style">Localista</li>
         </Link>
 
         <Link to='/About'>
-          <li>About</li>
+          <li className="about-navbar">About</li>
         </Link>
         <Toggle
           onClick={() => setDarkTheme(!isDarkTheme)}
           checked={isDarkTheme}>
-          {!isDarkTheme ? <CgSun size={40} /> : <HiMoon size={40} />}
+          {!isDarkTheme ? <CgSun size={25} /> : <HiMoon size={25} />}
         </Toggle>
       </ul>
     </nav>

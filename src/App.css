@@ -1,13 +1,30 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+    padding: 0;
 }
+
+
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  color: var(--second-color);
+  text-decoration:none; 
+ 
+}
+
 :root {
+  --first-color: #ffff;
+  --main-color: #F13030;
+  --second-color: #EAEFF2;
+  --third-color: #00E0D4;
   --text-color: rgb(3, 3, 3);
   --Nav-text-color: #ffff;
   --background-color: rgb(224, 215, 215);
   --nav-background-color: #ff5952;
   --search-bar-background-color: #ffff;
 }
+
+
+
 .dark {
   --text-color: rgb(255, 251, 251);
   --Nav-text-color: rgb(255, 251, 251);
@@ -15,6 +32,7 @@
   --nav-background-color: #793d3b;
   --search-bar-background-color: rgb(150, 125, 125);
 }
+
 h1,
 h2,
 h3,
@@ -29,7 +47,9 @@ body,
 .App {
   text-align: center;
   background-color: var(--background-color);
-}
+  font-family: "Poppins", sans-serif;
+} 
+
 .about-page {
   background-color: var(--background-color);
 }
@@ -41,8 +61,8 @@ nav {
   align-items: center;
   min-height: 10vh;
   /* background-color: var(--first-color); */
-  background-color: var(--nav-background-color);
-  color: var(--text-color);
+  background-color: var(--main-color);
+  color: #fff;
 }
 
 .Nav-links {
@@ -60,23 +80,99 @@ a {
   text-decoration: none;
 }
 
-.Search-bar {
-  top: 559px;
-  left: 269px;
-  width: 812px;
-  height: 63px;
-  background: var(--search-bar-background-color) 0% 0% no-repeat padding-box;
-  border-radius: 32px;
-  opacity: 1;
+.HomepageGif {
+  padding-top: 0;
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 3px 6px #00000029;
+  margin-bottom: 20px;
+}
+
+.text-under-gif {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+
+.FilterButton {
+  display: inline-block;
   border: none;
+  border-radius: 20px;
+  width: 80px;
+  height: 30px;
+  margin: 12px 5px;
+  text-decoration: none;
+  background: var(--main-color);
+  color: var(--second-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.FilterButton:hover,
+.FilterButton:focus {
+    background: var(--third-color);
+}
+
+.FilterButton:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.FilterButton:active {
+    transform: scale(0.99);
+}
+
+
+.Search-bar {
+  display: inline-block;
+  border: none;
+  border-radius: 20px;
+  width: 300px;
+  height: 30px;
+  margin: 12px 5px;
+  text-decoration: none;
+  background: var(--second-color);
+  color: var(--main-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .Search-bar:focus {
-  border: none;
+  background: var(--third-color);
 }
 
-.restaurantCard {
-  display: grid;
+.Search-bar:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.Search-bar:active {
+  transform: scale(0.99);
+}
+
+.restaurants {
+  margin-top: 40px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 40px;
+   text-align: center;
+}
+
+.restaurants .restaurant {
+ padding: 30px;
 }
 
 .map {
