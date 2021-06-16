@@ -81,7 +81,7 @@ function ListOfRestaurants() {
           <div className='Search-Buttons'>
             <input
               autoFocus='off'
-              autoComplete=''
+              autoComplete='off'
               className='Search-bar'
               type='text'
               placeholder='Find your restaurant'

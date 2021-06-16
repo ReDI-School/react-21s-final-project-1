@@ -258,6 +258,63 @@ h4 {
   font-size: 2rem;
   color: red;
 }
+/* ABOUT PAGE */
+
+.about-title {
+  margin: 20px;
+  font-size: xx-large;
+}
+.restaurant-owners img {
+  width: 900px;
+  border-radius: 10px;
+  margin: 20px;
+}
+.project-info h1,
+h2 {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.app-owner {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dev-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.dev-info h1 {
+  font-size: x-large;
+}
+.Amjad,
+.Sitora {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.github {
+  margin: 10px;
+  color: var(--text-color);
+}
+.Amjad img {
+  width: 300px;
+  height: 350px;
+  /* border: transparent; */
+  border-radius: 13px;
+  margin: 30px;
+}
+.Sitora img {
+  width: 300px;
+  height: 350px;
+  /* border: transparent; */
+  border-radius: 13px;
+  margin: 30px;
+}
 
 @media (max-width: 768px) {
   .restaurants {
