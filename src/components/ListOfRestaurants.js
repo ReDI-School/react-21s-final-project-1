@@ -2,7 +2,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import HomePageGif from '../assets/homepage-gif.gif';
+import HomePageGif from '../assets/HomepageGif3.gif';
 
 function ListOfRestaurants() {
   const [restaurants, setRestaurants] = useState(null);
