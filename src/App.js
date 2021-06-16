@@ -1,3 +1,4 @@
+import "./normalize.css";
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import ListOfRestaurants from './components/ListOfRestaurants';
