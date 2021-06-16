@@ -90,7 +90,7 @@ a {
   text-decoration: none;
 }
 .logo-style {
-  font-size: 50px;
+  font-size: 40px;
 }
 .about-dark {
   padding-right: 200px;
@@ -195,10 +195,10 @@ a {
 }
 .restaurants {
   margin-top: 40px;
-  margin-left: 100px;
+  margin-left: 140px;
   margin-right: 100px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   text-align: center;
 }
@@ -286,6 +286,7 @@ h4 {
     width: 270px;
     height: 30px;
   }
+
   .Buttons {
     margin-left: 48px;
   }
