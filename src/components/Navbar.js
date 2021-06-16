@@ -25,16 +25,21 @@ const Navbar = ({ isDarkTheme, setDarkTheme }) => {
     <nav>
       <ul className='Nav-links'>
         <Link to='/ListOfRestaurants'>
-        <li className="logo-style">Localista</li>
+          <li className='logo-style'>Localista</li>
         </Link>
-
+      </ul>
+      <ul className='about-dark'>
         <Link to='/About'>
-          <li className="about-navbar">About</li>
+          <li className='about-navbar'>About</li>
         </Link>
         <Toggle
           onClick={() => setDarkTheme(!isDarkTheme)}
           checked={isDarkTheme}>
-          {!isDarkTheme ? <CgSun size={25} /> : <HiMoon size={25} />}
+          {!isDarkTheme ? (
+            <CgSun size={25} color={'#fff'} />
+          ) : (
+            <HiMoon size={25} />
+          )}
         </Toggle>
       </ul>
     </nav>

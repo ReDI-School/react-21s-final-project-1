@@ -75,44 +75,65 @@ function ListOfRestaurants() {
   return (
     <div className='big-list'>
       <div>
-        <img src={HomePageGif} className="HomepageGif" alt='HomePaGeGif' />
-        <div className="div-under-gif">
-        <h3 className="text-under-gif">Berlin local restaurants</h3>
-        <button className="FilterButton" onClick={handleFilterAll}>All </button>
-        <button className="FilterButton" onClick={handleFilterOpen}>Open </button>
-        <button className="FilterButton" onClick={handleFilterPickup}>Pickup </button>
-        <button className="FilterButton" onClick={handleFilterDelivery}>Delivery </button>
-        <button className="FilterButton" onClick={handleFilterClose}>Closed</button>
-        <input
-        className="Search-bar"
-          type='text'
-          placeholder='Find your restaurant'
-          onChange={onSearchedRestaurants}
-        />
-        </div>
-      </div>
-      {filteredRestaurants &&
-        filteredRestaurants.map((restaurant) => (
-          <div className="restaurants" key={restaurant.id}>
-            <div className="restaurant">
-            <img className="restaurant-image"
-              style={{ width: 300, height: 300 }}
-              src={restaurant.photos[0].links[0]}
-              alt=''
+        <img src={HomePageGif} className='HomepageGif' alt='HomePaGeGif' />
+        <div className='div-under-gif'>
+          <h3 className='text-under-gif'>Berlin local restaurants</h3>
+          <div className='Search-Buttons'>
+            <input
+              className='Search-bar'
+              type='text'
+              placeholder='Find your restaurant'
+              onChange={onSearchedRestaurants}
             />
-
-            <h1 className='restaurant-title'>
-              <Link to={`/ListOfRestaurants/${restaurant.id}`}>
-                {restaurant.name}
-              </Link>
-            </h1>
-            
-              <h3 className="restaurant-cuisine">{restaurant.cuisine}</h3>
-              <h4 className="restaurant-rating">Rating:{restaurant.rating}</h4>
-              <h4 className="restaurant-price-level">Price level: {restaurant.price_level}</h4>
+            <div className='Buttons'>
+              <button className='FilterButton' onClick={handleFilterAll}>
+                All{' '}
+              </button>
+              <button className='FilterButton' onClick={handleFilterOpen}>
+                Open{' '}
+              </button>
+              <button className='FilterButton' onClick={handleFilterPickup}>
+                Pickup{' '}
+              </button>
+              <button className='FilterButton' onClick={handleFilterDelivery}>
+                Delivery{' '}
+              </button>
+              <button className='FilterButton' onClick={handleFilterClose}>
+                Closed
+              </button>
             </div>
           </div>
-        ))}
+        </div>
+      </div>
+      <div className='restaurants'>
+        {filteredRestaurants &&
+          filteredRestaurants.map((restaurant) => (
+            <div className='restaurant' key={restaurant.id}>
+              <div className='restaurant-image'>
+                <img
+                  // style={{ width: 300, height: 300 }}
+                  src={restaurant.photos[0].links[0]}
+                  alt=''
+                />
+              </div>
+              <div className='restaurant-info'>
+                <h1 className='restaurant-title'>
+                  <Link to={`/ListOfRestaurants/${restaurant.id}`}>
+                    {restaurant.name}
+                  </Link>
+                </h1>
+
+                <h3 className='restaurant-cuisine'>{restaurant.cuisine}</h3>
+                <h4 className='restaurant-rating'>
+                  Rating:{restaurant.rating}
+                </h4>
+                <h4 className='restaurant-price-level'>
+                  Price level: {restaurant.price_level}
+                </h4>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

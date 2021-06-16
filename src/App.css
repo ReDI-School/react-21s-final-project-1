@@ -1,29 +1,31 @@
 * {
   box-sizing: border-box;
   margin: 0;
-    padding: 0;
+  padding: 0;
 }
 
-
-a, a:link, a:visited, a:focus, a:hover, a:active{
+a,
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
   color: var(--second-color);
-  text-decoration:none; 
- 
+  text-decoration: none;
 }
 
 :root {
   --first-color: #ffff;
-  --main-color: #F13030;
-  --second-color: #EAEFF2;
-  --third-color: #00E0D4;
+  --main-color: #f13030;
+  --second-color: #eaeff2;
+  --third-color: #00e0d4;
   --text-color: rgb(3, 3, 3);
+  --restaurant-card-color: #e08181;
   --Nav-text-color: #ffff;
   --background-color: rgb(224, 215, 215);
   --nav-background-color: #ff5952;
   --search-bar-background-color: #ffff;
 }
-
-
 
 .dark {
   --text-color: rgb(255, 251, 251);
@@ -31,6 +33,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
   --background-color: rgb(82, 80, 80);
   --nav-background-color: #793d3b;
   --search-bar-background-color: rgb(150, 125, 125);
+  --restaurant-card-color: #312f2f;
 }
 
 h1,
@@ -47,30 +50,30 @@ body,
 .App {
   text-align: center;
   background-color: var(--background-color);
-  font-family: "Poppins", sans-serif;
-} 
+  font-family: 'Poppins', sans-serif;
+}
 
 .about-page {
   background-color: var(--background-color);
 }
 
 nav {
-  padding-left: 20px;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 10vh;
+  min-height: 8.5vh;
   /* background-color: var(--first-color); */
-  background-color: var(--main-color);
+  background-color: var(--nav-background-color);
   color: #fff;
 }
 
 .Nav-links {
-  left: 20px;
-  margin: 20px;
-  width: 40%;
+  padding-left: 100px;
+  /* left: 20px;
+  margin: 20px; */
+  /* width: 40%; */
   display: flex;
-  justify-content: space-between;
   list-style: none;
   color: var(--text-color);
 }
@@ -79,7 +82,19 @@ a {
   color: var(--text-color);
   text-decoration: none;
 }
-
+.logo-style {
+  font-size: 50px;
+}
+.about-dark {
+  padding-right: 200px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.about-dark a {
+  font-size: x-large;
+}
 .HomepageGif {
   padding-top: 0;
   width: 100%;
@@ -90,8 +105,8 @@ a {
 
 .text-under-gif {
   text-align: center;
-  font-size: 30px;
-  font-family: "Poppins", sans-serif;
+  font-size: 45px;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
 }
 
@@ -99,8 +114,8 @@ a {
   display: inline-block;
   border: none;
   border-radius: 20px;
-  width: 80px;
-  height: 30px;
+  width: 100px;
+  height: 45px;
   margin: 12px 5px;
   text-decoration: none;
   background: var(--main-color);
@@ -109,33 +124,31 @@ a {
   font-size: 0.9rem;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, 
-              transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
 .FilterButton:hover,
 .FilterButton:focus {
-    background: var(--third-color);
+  background: var(--third-color);
 }
 
 .FilterButton:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
+  outline: 1px solid #fff;
+  outline-offset: -4px;
 }
 
 .FilterButton:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }
-
 
 .Search-bar {
   display: inline-block;
   border: none;
   border-radius: 20px;
-  width: 300px;
-  height: 30px;
+  width: 400px;
+  height: 45px;
   margin: 12px 5px;
   text-decoration: none;
   background: var(--second-color);
@@ -144,8 +157,7 @@ a {
   font-size: 0.9rem;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, 
-              transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -162,17 +174,69 @@ a {
 .Search-bar:active {
   transform: scale(0.99);
 }
-
+.Search-Buttons {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
 .restaurants {
   margin-top: 40px;
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 40px;
-   text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+.restaurant {
+  width: 400px;
+  display: flex;
+  border: 0.1px transparent;
+  border-radius: 10px;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background: var(--restaurant-card-color) 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin-bottom: 40px;
+}
+.restaurant-image {
+  width: 400px;
+  height: 300px;
+}
+.restaurant-image img {
+  /* border-top: 10px; */
+  width: 400px;
+  height: 300px;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.restaurant-info {
+  display: contents;
+  width: 400px;
+  height: 100px;
 }
 
-.restaurants .restaurant {
- padding: 30px;
+.restaurants .restaurant:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  /* background-color: blue; */
+}
+
+.restaurants .restaurant h1 {
+  font-size: 30px;
+  font-weight: 500;
+
+  color: var(--secondary-color);
+}
+.restaurants .restaurant h3,
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--secondary-color);
 }
 
 .map {
