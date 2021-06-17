@@ -29,10 +29,10 @@ const Map = ({ restaurants, center, zoom }) => {
 
 Map.defaultProps = {
   center: {
-    lat: 52.514503,
-    lng: 13.459959,
+    lat: 52.524503,
+    lng: 13.409959,
   },
-  zoom: 12,
+  zoom: 13,
 };
 
 export default Map;

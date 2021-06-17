@@ -9,8 +9,7 @@ import PhoneIcon from '../assets/phone-call.png';
 import RatingIcon from '../assets/rating.png';
 import EmailIcon from '../assets/email.png';
 import DeliveryIcon from '../assets/delivery-man.png';
-import ClosedIcon from "../assets/closed.png";
-
+import ClosedIcon from '../assets/closed.png';
 
 // I have to target the id of each restaurant
 
@@ -32,104 +31,138 @@ function RestaurantDetails() {
   /// here you can show the restaurant data, you can apply your styles here.
   return restaurant ? (
     <div className='singleRestaurant'>
-      <div className="single-page-name">
-      {restaurant && restaurant.name && <h3>{restaurant.name}</h3>}
+      <div className='single-page-name'>
+        {restaurant && restaurant.name && <h3>{restaurant.name}</h3>}
       </div>
-      <div className="single-restaurant-grid">
-    <div className="single-page-cuisine-img">
-    <div className="single-page-cuisine">
-    {restaurant && restaurant.cuisine && (
-        <h4>Cuisine 
-          <br />
+      <div className='single-page-cuisine'>
+        {restaurant && restaurant.cuisine && (
           <img src={DishIcon} className='Icons' alt='Dish' />
-          {restaurant.cuisine} </h4>
-      )}
-      </div>
-<div className="single-page-img">
-      {restaurant.photos &&
-        restaurant.photos[0] &&
-        restaurant.photos[0].links &&
-        restaurant.photos[0].links[0] && (
-          <img src={restaurant.photos[0].links[0]} alt='icon' />
         )}
-        </div>
-    </div>
-      
-      <div className="single-page-info">
-      <h4>Details</h4>
-        <div className="single-page-pricelevel">
-      {restaurant && restaurant.price_level && (
-        <h6>
-          <img src={EuroIcon} className='Icons' alt='Euro' />
-          Price level {restaurant.price_level}</h6>
-      )}
+        <h4>Cuisine {restaurant.cuisine}</h4>
       </div>
-      <div className="single-page-rating">
-      {restaurant && restaurant.rating && <h6>
-        <img src={RatingIcon} className='Icons' alt='Rating' />
-        Rating: {restaurant.rating}</h6>}
-      </div>
-      <div className="single-page-openhours">
-      {restaurant &&
-        restaurant.opening_hours &&
-        restaurant.opening_hours.open_now && (
-          <div>{restaurant.opening_hours.open_now ? 'open' : 'closed'}</div>
-        )}
-      {restaurant &&
-        restaurant.opening_hours &&
-        restaurant.opening_hours.hours &&
-        restaurant.opening_hours.hours.open &&
-        restaurant.opening_hours.hours.close && (
-          <div>
-            <h4>
-            <img src={OpenIcon} className='Icons' alt='Open' />
-              {restaurant.opening_hours.hours.open}</h4>
-            <h4>
-            <img src={ClosedIcon} className='Icons' alt='Closed' />
-              {restaurant.opening_hours.hours.close}</h4>
+
+      <div className='single-restaurant-flex'>
+        <div className='single-page-imgs'>
+          <div className='single-page-img'>
+            {restaurant.photos &&
+              restaurant.photos[0] &&
+              restaurant.photos[0].links &&
+              restaurant.photos[0].links[0] && (
+                <img src={restaurant.photos[0].links[0]} alt='icon' />
+              )}
           </div>
-        )}
-</div>
-<div className="single-page-pickup">
-      {restaurant && restaurant.pickup && (
-        <div>
-          {restaurant.pickup ? 'pickup' : null} </div>
-      )}
+          <div className='single-page-img'>
+            {restaurant.photos &&
+              restaurant.photos[0] &&
+              restaurant.photos[0].links &&
+              restaurant.photos[0].links[0] && (
+                <img src={restaurant.photos[0].links[1]} alt='icon' />
+              )}
+          </div>
+          <div className='single-page-img'>
+            {restaurant.photos &&
+              restaurant.photos[0] &&
+              restaurant.photos[0].links &&
+              restaurant.photos[0].links[0] && (
+                <img src={restaurant.photos[0].links[2]} alt='icon' />
+              )}
+          </div>
+        </div>
+        <div className='single-page-infos'>
+          <div className='single-page-info'>
+            <h4>Details</h4>
+            <div className=' ff'>
+              <img src={EuroIcon} className='Icons' alt='euro' />
+              <h5>Price level</h5>
+              {restaurant && restaurant.price_level && (
+                <h3> {restaurant.price_level}</h3>
+              )}
+            </div>
+            <div className='ff'>
+              <img src={RatingIcon} className='Icons' alt='Rating' />
+              <h5>Rating:</h5>
+              {restaurant && restaurant.rating && <h6> {restaurant.rating}</h6>}
+            </div>
+            <div className='ff'>
+              {restaurant &&
+                restaurant.opening_hours &&
+                restaurant.opening_hours.hours &&
+                restaurant.opening_hours.hours.open &&
+                restaurant.opening_hours.hours.close && (
+                  <div>
+                    <div className='ff'>
+                      <img src={OpenIcon} className='Icons' alt='Open' />
+                      <h5>Open:</h5>
+                      <h5>{restaurant.opening_hours.hours.open}</h5>
+                    </div>
+                  </div>
+                )}
+            </div>
 
-</div>
-      <div className="single-page-delivery">
-      {restaurant && restaurant.delivery && (
-        <div>
-          <img src={DeliveryIcon} className='Icons' alt='Delivery' />
-          {restaurant.delivery ? 'delivery' : null}</div>
-      )}
-      </div>
-      </div>
-      <div className="single-page-contact">
-      <h4>Contact</h4>
-      {restaurant && restaurant.social && (
-        <h5>
-          <img src={EmailIcon} className='Icons' alt='Email' />
-          Email: {restaurant.social.email}
+            <div className='ff'>
+              {restaurant &&
+                restaurant.opening_hours &&
+                restaurant.opening_hours.hours &&
+                restaurant.opening_hours.hours.open &&
+                restaurant.opening_hours.hours.close && (
+                  <div>
+                    <div className='ff'>
+                      <img src={ClosedIcon} className='Icons' alt='Closed' />
+                      <h5>Close:</h5>
+                      <h5>{restaurant.opening_hours.hours.close}</h5>
+                    </div>
+                  </div>
+                )}
+            </div>
+
+            <div className='single-page-delivery'>
+              {restaurant && restaurant.delivery && (
+                <div className='ff'>
+                  <img src={DeliveryIcon} className='Icons' alt='Delivery' />
+                  <h5>{restaurant.delivery ? 'delivery' : null}</h5>
+                </div>
+              )}
+            </div>
+            {/* <div className='single-page-pickup'>
+              {restaurant && restaurant.pickup && (
+                <div>{restaurant.pickup ? 'pickup' : null} </div>
+              )}
+            </div> */}
+          </div>
+          {/* =================================================== */}
+          <div className='single-page-contact'>
+            <h4>Contact</h4>
+            <div className='ff'>
+              {restaurant && restaurant.social && (
+                <div>
+                  <br />
+                  <img src={EmailIcon} className='Icons' alt='Email' />
+                  <br />
+                  <br />
+                  <h5>Email: {restaurant.social.email}</h5>
+                  <br />
+                  <br />
+                  <img src={PhoneIcon} className='Icons' alt='Phone' />
+                  <br />
+                  <br />
+                  <h5> Phone: {restaurant.social.phone}</h5>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className='single-page-location'>
+          <h4>Location</h4>
           <br />
-          <img src={PhoneIcon} className='Icons' alt='Phone' />
-          Phone: {restaurant.social.phone}
-        </h5>
-      )}
+          <div className='fff'>
+            <img src={LocationIcon} className='Icons' alt='Location' />
+            {restaurant && restaurant.formatted_address && (
+              <h5>Address: {restaurant.formatted_address}</h5>
+            )}
+          </div>
+          <Map restaurants={[restaurant]} />
+        </div>
       </div>
-      
-      <div className="single-page-location">
-      <h4>Location</h4>
-      <img src={LocationIcon} className='Icons' alt='Location' />
-      {restaurant && restaurant.formatted_address && (
-        <h5>Address: {restaurant.formatted_address}</h5>
-      )}
-{/* <h1>{restaurant.geometry.location.lat}</h1> */}
-
-<Map restaurants={[restaurant]} />
-      </div>
-      </div>
-      
     </div>
   ) : null;
 }

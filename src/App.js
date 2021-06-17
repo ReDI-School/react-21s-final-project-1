@@ -1,4 +1,4 @@
-import "./normalize.css";
+import './normalize.css';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import ListOfRestaurants from './components/ListOfRestaurants';
@@ -17,7 +17,8 @@ function App() {
     // here how we fixed to apply the background color to the hole body
     document.body.style.backgroundColor = isDarkTheme
       ? 'rgb(82, 80, 80)'
-      : 'rgb(224, 215, 215)';
+      : 'r#fff5eb';
+
     localStorage.setItem('darkMode', JSON.stringify(isDarkTheme));
   }, [isDarkTheme]);
 

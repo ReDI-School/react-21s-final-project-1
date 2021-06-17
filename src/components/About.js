@@ -23,24 +23,28 @@ const About = () => {
           <img src={amjad} alt='' className='owner-img' />
           <div className='dev-info'>
             <h1>Amjad Oudeh</h1>
-            <a href='https://github.com/Amjadoudeh'>
-              <FaGithub size={30} className='github' />
-            </a>
-            <a href='https://www.linkedin.com/in/amjad-oudeh-541418167/'>
-              <FaLinkedin size={30} className='github' />
-            </a>
+            <div>
+              <a href='https://github.com/Amjadoudeh'>
+                <FaGithub size={30} className='github' />
+              </a>
+              <a href='https://www.linkedin.com/in/amjad-oudeh-541418167/'>
+                <FaLinkedin size={30} className='github' />
+              </a>
+            </div>
           </div>
         </div>
         <div className='Sitora'>
           <img src={sitora} alt='' />
           <div className='dev-info'>
             <h1>Sitora Sodatkadamova</h1>
-            <a href='https://github.com/Sita22'>
-              <FaGithub size={30} className='github' />
-            </a>
-            <a href='https://www.linkedin.com/in/sitora-sodatkadamova-b84989124/'>
-              <FaLinkedin size={30} className='github' />
-            </a>
+            <div>
+              <a href='https://github.com/Sita22'>
+                <FaGithub size={30} className='github' />
+              </a>
+              <a href='https://www.linkedin.com/in/sitora-sodatkadamova-b84989124/'>
+                <FaLinkedin size={30} className='github' />
+              </a>
+            </div>
           </div>
         </div>
       </div>

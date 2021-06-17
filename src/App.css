@@ -18,20 +18,26 @@ a:active {
 }
 
 :root {
+  --button-color: #b2b8a3;
+  --button-hover-color: #deedf0;
+  --info-card-background-color: #5ab4f026;
   --text-color: rgb(3, 3, 3);
-  --restaurant-card-color: #e08181;
-  --Nav-text-color: #424874;
-  --background-color: rgb(224, 215, 215);
-  --nav-background-color: #F67280;
-  --search-bar-background-color: #355C7D;
+  --restaurant-card-color: #b2b8a3;
+  --Nav-text-color: #323235;
+  --background-color: #fff5eb;
+  --nav-background-color: #f4c7ab;
+  --search-bar-background-color: #b2b8a3;
 }
 
 .dark {
+  --button-color: #312c2c;
+  --button-hover-color: #738d8c;
+  --info-card-background-color: #1b77b426;
   --text-color: rgb(255, 251, 251);
   --Nav-text-color: rgb(255, 251, 251);
   --background-color: rgb(82, 80, 80);
   --nav-background-color: #793d3b;
-  --search-bar-background-color: rgb(150, 125, 125);
+  --search-bar-background-color: rgb(248, 248, 248);
   --restaurant-card-color: #312f2f;
 }
 
@@ -43,6 +49,7 @@ h5,
 h6,
 p {
   color: var(--text-color);
+  font-family: 'Poppins';
 }
 body,
 .big-list,
@@ -62,16 +69,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   min-height: 8.5vh;
-  /* background-color: var(--first-color); */
   background-color: var(--nav-background-color);
-  color: #fff;
+  color: var(--Nav-text-color);
 }
 
 .Nav-links {
   padding-left: 100px;
-  /* left: 20px;
-  margin: 20px; */
-  /* width: 40%; */
   display: flex;
   list-style: none;
   color: var(--text-color);
@@ -108,16 +111,21 @@ a {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
 }
+.main {
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 
 .FilterButton {
-  display: inline-block;
   border: none;
   border-radius: 20px;
   width: 100px;
   height: 45px;
   margin: 12px 5px;
   text-decoration: none;
-  background: var(--main-color);
+  background: var(--button-color);
   color: var(--nav-text-color);
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
@@ -130,11 +138,11 @@ a {
 
 .FilterButton:hover,
 .FilterButton:focus {
-  background: var(--third-color);
+  background: var(--button-hover-color);
 }
 
 .FilterButton:focus {
-  outline: 1px solid #fff;
+  outline: 1px solid;
   outline-offset: -4px;
 }
 
@@ -142,28 +150,28 @@ a {
 :checked {
   transform: scale(0.8);
 }
+.Buttons {
+  display: flex;
+}
 
 .Search-bar {
-  display: inline-block;
   border: none;
   border-radius: 20px;
   width: 500px;
   height: 45px;
   margin: 12px 5px;
   text-decoration: none;
-  background: var(--second-color);
-  color: var(--main-color);
+  background: var(--search-bar-background-color);
+  color: var(--text-color);
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
 .Search-bar:focus {
-  background: var(--third-color);
+  background: var(--button-hover-color);
   outline-style: none;
   outline: none;
 }
@@ -173,12 +181,11 @@ a {
 }
 .Search-Buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-content: center;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
 }
+
 .Search-Buttons :focus,
 .Search-Buttons:active {
   border: none;
@@ -202,7 +209,7 @@ a {
   flex-direction: column;
   align-content: center;
   align-items: center;
-  background: var(--main-color) 0% 0% no-repeat padding-box;
+  background: var(--restaurant-card-color) 0% 0% no-repeat padding-box;
   opacity: 1;
   margin-bottom: 40px;
 }
@@ -232,19 +239,19 @@ a {
 .restaurants .restaurant h1 {
   font-size: 30px;
   font-weight: 500;
-
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 .restaurants .restaurant h3,
 h4 {
   font-size: 24px;
   font-weight: 500;
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .map {
-  width: 300px;
-  height: 150px;
+  width: 800px;
+  height: 350px;
+  border: 1px solid;
 }
 /* .singleRestaurant {
   display: flex;
@@ -315,13 +322,123 @@ h2 {
   border-radius: 13px;
   margin: 30px;
 }
+.singleRestaurant {
+  background-color: var(--background-color);
+}
+.single-page-cuisine {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.single-page-cuisine h4 {
+  margin-left: 30px;
+}
+.single-restaurant-flex {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.single-page-imgs {
+  display: flex;
+}
+.single-page-infos {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  margin: 40px;
+}
+.single-page-info h4,
+.single-page-contact h4 {
+  font-size: xx-large;
+  margin-bottom: revert;
+  font-family: 'Poppins';
+  font-weight: 400;
+  margin-top: revert;
+}
+.single-page-info,
+.single-page-contact {
+  width: 500px;
+  display: flex;
+  border: 0.1px transparent;
+  border-radius: 10px;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 
-@media (max-width: 768px) {
+  opacity: 1;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  background-color: var(--info-card-background-color);
+  margin: 10px 10px 10px 10px;
+}
+
+.single-page-img img {
+  width: 330px;
+  height: 290px;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 10px 10px 10px 10px;
+  margin: 20px;
+}
+
+.single-page-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+.Icons {
+  width: 35px;
+  color: var(--text-color);
+}
+.ff {
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin: 5px;
+}
+.ff img {
+  margin: inherit;
+}
+.single-page-location {
+  width: 800px;
+  margin-bottom: 60px;
+}
+.fff {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
+  .Nav-links {
+    padding-left: 30px;
+  }
+  .big-list {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .big-list .main-img {
+    padding-left: 0px;
+  }
   .restaurants {
     grid-template-columns: 1fr;
   }
   .text-under-gif {
-    margin-left: 48px;
+    /* margin-left: 48px; */
     font-size: x-large;
   }
   .Search-Buttons {
@@ -331,13 +448,11 @@ h2 {
     margin: 10px;
   }
   .Search-bar {
-    margin-left: 48px;
+    /* margin-left: 48px; */
     width: 270px;
     height: 30px;
   }
-  .Buttons {
-    margin-left: 48px;
-  }
+
   .FilterButton {
     margin-right: 2px;
     width: 55px;
@@ -350,51 +465,53 @@ h2 {
   }
   .restaurants .restaurant {
     width: 250px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
   }
-}
-
-
-.single-restaurant-grid {
-  margin-top: 40px;
-  margin-left: 100px;
-  margin-right: 100px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  text-align: center;
-}
-
-.sinle-page-cousine-img,
-.single-page-info, 
-.single-page-contact, 
-.single-page-location {
-  width: 300px;
-  display: flex;
-  border: 0.1px transparent;
-  border-radius: 10px;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  background: var(--main-color) 0% 0% no-repeat padding-box;
-  opacity: 1;
-  margin-bottom: 40px;
-}
-
-.single-page-img img {
-  width: 300px;
-  height: 250px;
-  max-height: 100%;
-  max-width: 100%;
-  border-radius: 10px 10px 0 0;
-}
-
-.single-page-name {
-  font-family: "Poppins", sans-serif;
-  font-size: 50px;
-  margin-top: 20px;
-}
-
-.Icons {
-  width: 35px;
+  .restaurant-owners img {
+    width: 300px;
+    height: auto;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+  }
+  .project-info h1,
+  h2 {
+    margin: 10%;
+  }
+  .app-owner {
+    flex-direction: column;
+  }
+  .Amjad img,
+  .Sitora img {
+    width: 250px;
+    height: 260px;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+  }
+  .dev-info {
+    flex-direction: column;
+  }
+  .single-page-imgs {
+    display: contents;
+  }
+  .single-page-img img {
+    box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+  }
+  .single-page-infos {
+    flex-direction: column;
+  }
+  .single-page-location {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .map {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+  }
+  .fff {
+    display: block;
+    margin: 10px;
+  }
 }
