@@ -36,9 +36,9 @@ const Navbar = ({ isDarkTheme, setDarkTheme }) => {
           onClick={() => setDarkTheme(!isDarkTheme)}
           checked={isDarkTheme}>
           {!isDarkTheme ? (
-            <CgSun size={25} color={'#fff'} />
+            <HiMoon size={25} color={'#000'} />
           ) : (
-            <HiMoon size={25} />
+            <CgSun size={25} />
           )}
         </Toggle>
       </ul>

@@ -38,7 +38,7 @@ function RestaurantDetails() {
         {restaurant && restaurant.cuisine && (
           <img src={DishIcon} className='Icons' alt='Dish' />
         )}
-        <h4>Cuisine {restaurant.cuisine}</h4>
+        <h4> {restaurant.cuisine}</h4>
       </div>
 
       <div className='single-restaurant-flex'>
@@ -71,26 +71,26 @@ function RestaurantDetails() {
         <div className='single-page-infos'>
           <div className='single-page-info'>
             <h4>Details</h4>
-            <div className=' ff'>
+            <div className='info'>
               <img src={EuroIcon} className='Icons' alt='euro' />
               <h5>Price level</h5>
               {restaurant && restaurant.price_level && (
                 <h3> {restaurant.price_level}</h3>
               )}
             </div>
-            <div className='ff'>
+            <div className='info'>
               <img src={RatingIcon} className='Icons' alt='Rating' />
               <h5>Rating:</h5>
               {restaurant && restaurant.rating && <h6> {restaurant.rating}</h6>}
             </div>
-            <div className='ff'>
+            <div className='info'>
               {restaurant &&
                 restaurant.opening_hours &&
                 restaurant.opening_hours.hours &&
                 restaurant.opening_hours.hours.open &&
                 restaurant.opening_hours.hours.close && (
                   <div>
-                    <div className='ff'>
+                    <div className='info'>
                       <img src={OpenIcon} className='Icons' alt='Open' />
                       <h5>Open:</h5>
                       <h5>{restaurant.opening_hours.hours.open}</h5>
@@ -99,14 +99,14 @@ function RestaurantDetails() {
                 )}
             </div>
 
-            <div className='ff'>
+            <div className='info'>
               {restaurant &&
                 restaurant.opening_hours &&
                 restaurant.opening_hours.hours &&
                 restaurant.opening_hours.hours.open &&
                 restaurant.opening_hours.hours.close && (
                   <div>
-                    <div className='ff'>
+                    <div className='info'>
                       <img src={ClosedIcon} className='Icons' alt='Closed' />
                       <h5>Close:</h5>
                       <h5>{restaurant.opening_hours.hours.close}</h5>
@@ -117,7 +117,7 @@ function RestaurantDetails() {
 
             <div className='single-page-delivery'>
               {restaurant && restaurant.delivery && (
-                <div className='ff'>
+                <div className='info'>
                   <img src={DeliveryIcon} className='Icons' alt='Delivery' />
                   <h5>{restaurant.delivery ? 'delivery' : null}</h5>
                 </div>
@@ -131,7 +131,9 @@ function RestaurantDetails() {
           </div>
           {/* =================================================== */}
           <div className='single-page-contact'>
-            <h4>Contact</h4>
+            <div>
+              <h4>Contact</h4>
+            </div>
             <div className='ff'>
               {restaurant && restaurant.social && (
                 <div>

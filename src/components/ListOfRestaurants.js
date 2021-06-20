@@ -80,14 +80,16 @@ function ListOfRestaurants() {
           <div className='div-under-gif'>
             <h3 className='text-under-gif'>Berlin local restaurants</h3>
             <div className='Search-Buttons'>
-              <input
-                autoFocus='off'
-                autoComplete='off'
-                className='Search-bar'
-                type='text'
-                placeholder='Find your restaurant'
-                onChange={onSearchedRestaurants}
-              />
+              <div>
+                <input
+                  autoFocus='off'
+                  autoComplete='off'
+                  className='Search-bar'
+                  type='text'
+                  placeholder='Find your restaurant'
+                  onChange={onSearchedRestaurants}
+                />
+              </div>
               <div className='Buttons'>
                 <button className='FilterButton' onClick={handleFilterAll}>
                   All{' '}
@@ -112,28 +114,28 @@ function ListOfRestaurants() {
             {filteredRestaurants &&
               filteredRestaurants.map((restaurant) => (
                 <div className='restaurant' key={restaurant.id}>
-                  <div className='restaurant-image'>
-                    <img
-                      // style={{ width: 300, height: 300 }}
-                      src={restaurant.photos[0].links[0]}
-                      alt=''
-                    />
-                  </div>
-                  <div className='restaurant-info'>
-                    <h1 className='restaurant-title'>
-                      <Link to={`/ListOfRestaurants/${restaurant.id}`}>
-                        {restaurant.name}
-                      </Link>
-                    </h1>
+                  <Link to={`/ListOfRestaurants/${restaurant.id}`}>
+                    <div className='restaurant-image'>
+                      <img
+                        // style={{ width: 300, height: 300 }}
+                        src={restaurant.photos[0].links[0]}
+                        alt=''
+                      />
+                    </div>
+                    <div className='restaurant-info'>
+                      <h1 className='restaurant-title'>{restaurant.name}</h1>
 
-                    <h3 className='restaurant-cuisine'>{restaurant.cuisine}</h3>
-                    <h4 className='restaurant-rating'>
-                      Rating:{restaurant.rating}
-                    </h4>
-                    <h4 className='restaurant-price-level'>
-                      Price level: {restaurant.price_level}
-                    </h4>
-                  </div>
+                      <h3 className='restaurant-cuisine'>
+                        {restaurant.cuisine}
+                      </h3>
+                      <h4 className='restaurant-rating'>
+                        Rating:{restaurant.rating}
+                      </h4>
+                      <h4 className='restaurant-price-level'>
+                        Price level: {restaurant.price_level}
+                      </h4>
+                    </div>
+                  </Link>
                 </div>
               ))}
           </div>
