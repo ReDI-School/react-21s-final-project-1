@@ -30,7 +30,7 @@ a:active {
 }
 
 .dark {
-  --button-color: #312c2c;
+  --button-color: #9288886b;
   --button-hover-color: #738d8c;
   --info-card-background-color: #1b77b426;
   --text-color: rgb(255, 251, 251);
@@ -85,7 +85,11 @@ a {
   text-decoration: none;
 }
 .logo-style {
-  font-size: 30px;
+  font-size: 2.5rem;
+  font-family: 'Poppins';
+}
+.about-navbar {
+  font-size: 0.98rem;
 }
 .about-dark {
   padding-right: 200px;
@@ -94,9 +98,9 @@ a {
   justify-content: center;
   align-items: center;
 }
-.about-dark a {
+/* .about-dark a {
   font-size: x-large;
-}
+} */
 .HomepageGif {
   padding-top: 0;
   width: 100%;
@@ -107,11 +111,15 @@ a {
 
 .text-under-gif {
   text-align: center;
-  font-size: 45px;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-family: 'Poppins';
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .main {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
@@ -161,7 +169,7 @@ a {
   height: 45px;
   margin: 12px 5px;
   text-decoration: none;
-  background: var(--search-bar-background-color);
+  background: var(--button-hover-color);
   color: var(--text-color);
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
@@ -180,10 +188,13 @@ a {
   transform: scale(0.99);
 }
 .Search-Buttons {
+  width: 90vw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-content: center;
   align-items: center;
+  /* margin-left: 20px;
+  margin-right: 20px; */
 }
 
 .Search-Buttons :focus,
@@ -193,9 +204,7 @@ a {
   outline-style: none;
 }
 .restaurants {
-  margin-top: 40px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-top: 80px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
@@ -269,36 +278,61 @@ h4 {
 
 .about-title {
   margin: 20px;
-  font-size: xx-large;
+  font-size: 2rem;
+  font-family: 'Poppins';
+}
+.about-page {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+}
+.restaurant-owners {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-family: 'Poppins';
 }
 .restaurant-owners img {
   width: 900px;
   border-radius: 10px;
   margin: 20px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
 }
 .project-info h1,
 h2 {
-  font-size: 20px;
-  margin: 5px;
+  font-family: 'Poppins';
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .app-owner {
   display: flex;
   align-content: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 .dev-info {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
 }
 .dev-info h1 {
-  font-size: x-large;
+  font-size: 1.3rem;
 }
 .Amjad,
 .Sitora {
+  padding: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -308,32 +342,44 @@ h2 {
   margin: 10px;
   color: var(--text-color);
 }
-.Amjad img {
-  width: 300px;
-  height: 350px;
-  /* border: transparent; */
-  border-radius: 13px;
-  margin: 30px;
-}
+.Amjad img,
 .Sitora img {
   width: 300px;
   height: 350px;
-  /* border: transparent; */
   border-radius: 13px;
   margin: 30px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
 }
+
 .singleRestaurant {
   background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }
 .single-page-cuisine {
   display: flex;
   flex-direction: row;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  font-size: 1.75rem;
+  font-family: 'Poppins';
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 .single-page-cuisine h4 {
-  margin-left: 30px;
+  margin-left: 20px;
+}
+.single-page-restaurant h3 {
+  font-family: 'Poppins';
+  font-size: 1.8rem;
+  margin-top: 60px;
+  padding: 17px;
+  margin-bottom: 20px;
 }
 .single-restaurant-flex {
   display: flex;
@@ -344,16 +390,22 @@ h2 {
 }
 .single-page-imgs {
   display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 40px;
 }
 .single-page-infos {
   display: flex;
+  width: 1000px;
   align-content: center;
-  justify-content: space-evenly;
-  margin: 40px;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  margin-top: 60px;
 }
 .single-page-info h4,
 .single-page-contact h4 {
-  font-size: xx-large;
+  font-size: 1.6rem;
   margin-bottom: revert;
   font-family: 'Poppins';
   font-weight: 400;
@@ -361,34 +413,41 @@ h2 {
 }
 .single-page-info,
 .single-page-contact {
-  width: 500px;
+  width: 370px;
   display: flex;
   border: 0.1px transparent;
   border-radius: 10px;
   flex-direction: column;
   align-content: center;
   align-items: center;
-
   opacity: 1;
-  margin-top: 10px;
+  margin-top: 40px;
   margin-bottom: 40px;
   background-color: var(--info-card-background-color);
   margin: 10px 10px 10px 10px;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
 }
 
+.single-page-img {
+  width: 450px;
+  height: 370px;
+}
 .single-page-img img {
-  width: 330px;
-  height: 290px;
+  width: 400px;
+  height: 350px;
   max-height: 100%;
   max-width: 100%;
   border-radius: 10px 10px 10px 10px;
   margin: 20px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 40%);
 }
 
 .single-page-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: 50px;
-  margin-top: 20px;
+  font-family: 'Poppins';
+  font-size: 2rem;
+  margin-top: 80px;
+  margin-bottom: 20px;
 }
 
 .Icons {
@@ -396,6 +455,13 @@ h2 {
   color: var(--text-color);
 }
 .ff {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin: 5px;
+}
+.info {
   width: 220px;
   display: flex;
   justify-content: space-between;
@@ -403,19 +469,45 @@ h2 {
   align-self: center;
   margin: 5px;
 }
+
 .ff img {
   margin: inherit;
 }
 .single-page-location {
   width: 800px;
   margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+.single-page-location h4 {
+  font-size: 1.5rem;
+  font-family: 'Poppins';
+}
+
 .fff {
   display: flex;
   align-content: center;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
 }
+.footer {
+  min-height: 7%;
+  min-width: 100%;
+  background-color: var(--nav-background-color);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+/* -------------------------------------------- */
 @media (max-width: 600px) {
   body,
   html {
@@ -434,13 +526,20 @@ h2 {
   .big-list .main-img {
     padding-left: 0px;
   }
+  .main {
+    display: flex;
+    /* justify-content: space-between; */
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
   .restaurants {
     grid-template-columns: 1fr;
+    margin-top: 40px;
   }
-  .text-under-gif {
-    /* margin-left: 48px; */
-    font-size: x-large;
-  }
+
   .Search-Buttons {
     display: flex;
     flex-direction: column;
@@ -451,6 +550,7 @@ h2 {
     /* margin-left: 48px; */
     width: 270px;
     height: 30px;
+    margin-bottom: 30px;
   }
 
   .FilterButton {
@@ -465,12 +565,15 @@ h2 {
   }
   .restaurants .restaurant {
     width: 250px;
-    box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
+  }
+  .restaurant {
+    margin-bottom: 15px;
   }
   .restaurant-owners img {
     width: 300px;
     height: auto;
-    box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
   }
   .project-info h1,
   h2 {
@@ -478,24 +581,53 @@ h2 {
   }
   .app-owner {
     flex-direction: column;
+    margin-top: -50px;
+  }
+  .Amjad,
+  .Sitora {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
   }
   .Amjad img,
   .Sitora img {
     width: 250px;
     height: 260px;
-    box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
   }
-  .dev-info {
+
+  .singleRestaurant {
+    display: flex;
     flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
   }
   .single-page-imgs {
     display: contents;
   }
+  .single-page-img {
+    width: 400px;
+    height: 300px;
+  }
   .single-page-img img {
+    width: 300px;
+    height: 250px;
     box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
   }
   .single-page-infos {
+    width: 300px;
+    display: flex;
     flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .single-page-info,
+  .single-page-contact {
+    width: 300px;
+    margin-bottom: 50px;
   }
   .single-page-location {
     width: 200px;

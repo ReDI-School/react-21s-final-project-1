@@ -6,9 +6,11 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import RestaurantDetails from './components/RestaurantDetails';
+import Footer from './components/Footer';
 
 function App() {
   // Dark Mode and saving it on the Browser :)
+
   const getTheme = () => {
     return JSON.parse(localStorage.getItem('darkMode')) || false;
   };
@@ -45,6 +47,7 @@ function App() {
           />
           <Route path='/About' component={About} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
