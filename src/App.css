@@ -596,12 +596,15 @@ h2 {
     width: 300px;
     box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
     margin-bottom: 15px;
+    color: var(--text-color);
   }
   .restaurant-info {
     width: 300px;
+    color: var(--text-color);
   }
   .restaurant-status {
     width: 260px;
+    color: var(--text-color);
   }
   .restaurant-owners img {
     width: 300px;
