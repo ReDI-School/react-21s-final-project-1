@@ -16,7 +16,7 @@ a:active {
   color: var(--second-color);
   text-decoration: none;
 }
-
+/* CSS variables  */
 :root {
   --button-color: #b2b8a3;
   --button-hover-color: #deedf0;
@@ -41,16 +41,6 @@ a:active {
   --restaurant-card-color: #312f2f;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  color: var(--text-color);
-  font-family: 'Poppins';
-}
 body,
 .big-list,
 .App {
@@ -212,48 +202,87 @@ a {
 }
 .restaurant {
   width: 400px;
+  height: 390px;
   display: flex;
   border: 0.1px transparent;
   border-radius: 10px;
   flex-direction: column;
-  align-content: center;
-  align-items: center;
+
   background: var(--restaurant-card-color) 0% 0% no-repeat padding-box;
   opacity: 1;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
 }
 .restaurant-image {
   width: 400px;
-  height: 300px;
+  height: 220px;
 }
 .restaurant-image img {
-  /* border-top: 10px; */
   width: 400px;
   height: 300px;
   max-height: 100%;
   max-width: 100%;
-  border-radius: 10px 10px 0 0;
 }
 .restaurant-info {
-  display: contents;
+  display: flex;
   width: 400px;
-  height: 100px;
+  height: 390px;
+  flex-direction: column;
+  align-content: center;
+  margin: 5px 0 5px 0;
+  align-items: center;
+}
+.restaurant-name-cuisine-icon {
+  display: flex;
+  align-items: center;
+}
+.restaurant-title-rating {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.restaurant-title {
+  margin: 10px;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+.restaurant-rating h4 {
+  font-size: 0.9rem;
+}
+.restaurant-rating h4 span {
+  font-size: 0.7rem;
 }
 
+.restaurant-status {
+  display: flex;
+  justify-content: space-between;
+  width: 370px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.restaurant-rate-price {
+  margin: 7px 0 7px 0;
+}
+.address {
+  margin: 3px 0 3px 0;
+}
 .restaurants .restaurant:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   /* background-color: blue; */
 }
-
-.restaurants .restaurant h1 {
-  font-size: 30px;
-  font-weight: 500;
-  color: var(--text-color);
+.status-in {
+  width: 147px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
 }
 .restaurants .restaurant h3,
 h4 {
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 300;
   color: var(--text-color);
 }
 
@@ -564,11 +593,15 @@ h2 {
     height: 180px;
   }
   .restaurants .restaurant {
-    width: 250px;
+    width: 300px;
     box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
-  }
-  .restaurant {
     margin-bottom: 15px;
+  }
+  .restaurant-info {
+    width: 300px;
+  }
+  .restaurant-status {
+    width: 260px;
   }
   .restaurant-owners img {
     width: 300px;

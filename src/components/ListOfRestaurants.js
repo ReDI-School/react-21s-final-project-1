@@ -115,25 +115,66 @@ function ListOfRestaurants() {
               filteredRestaurants.map((restaurant) => (
                 <div className='restaurant' key={restaurant.id}>
                   <Link to={`/ListOfRestaurants/${restaurant.id}`}>
-                    <div className='restaurant-image'>
-                      <img
-                        // style={{ width: 300, height: 300 }}
-                        src={restaurant.photos[0].links[0]}
-                        alt=''
-                      />
-                    </div>
                     <div className='restaurant-info'>
-                      <h1 className='restaurant-title'>{restaurant.name}</h1>
-
-                      <h3 className='restaurant-cuisine'>
-                        {restaurant.cuisine}
-                      </h3>
-                      <h4 className='restaurant-rating'>
-                        Rating:{restaurant.rating}
-                      </h4>
-                      <h4 className='restaurant-price-level'>
-                        Price level: {restaurant.price_level}
-                      </h4>
+                      <div className='restaurant-name-cuisine-icon'>
+                        <img
+                          className='restaurant-icon'
+                          src={restaurant.icon}
+                          alt='icon'
+                          width='45px'
+                          height='45px'
+                        />
+                        <div className='restaurant-title-rating'>
+                          <div className='restaurant-title'>
+                            <h1>{restaurant.name}</h1>
+                          </div>
+                          <div className='restaurant-rating'>
+                            <h4>
+                              <span>&#11088; </span>
+                              {restaurant.rating}
+                              <span> ({restaurant.user_ratings_total}) - </span>
+                              {restaurant.cuisine}
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='restaurant-image'>
+                        <img src={restaurant.photos[0].links[0]} alt='' />
+                      </div>
+                      <div className='restaurant-rate-price'>
+                        <div className='address'>
+                          {' '}
+                          <h3>address:</h3>
+                          <span>{restaurant.formatted_address}</span>
+                        </div>
+                      </div>
+                      <div className='restaurant-status'>
+                        <div className='status-in'>
+                          {restaurant && restaurant.delivery && (
+                            <h5 className='delivery'>
+                              {restaurant.delivery ? 'Delivery' : null}
+                            </h5>
+                          )}
+                          {restaurant && restaurant.pickup && (
+                            <h5 className='pickup'>
+                              {restaurant.pickup ? 'Pickup' : null}
+                            </h5>
+                          )}
+                          {restaurant && restaurant.open_now && (
+                            <h5 className='open'>
+                              {restaurant.open_now ? 'Open' : null}
+                            </h5>
+                          )}
+                          {restaurant && restaurant.open_now && (
+                            <h5 className='close'>
+                              {restaurant.open_now ? 'Close' : null}
+                            </h5>
+                          )}
+                        </div>
+                        <div>
+                          <h1>&#9825;</h1>
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 </div>
