@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-21s-final-project-1/static/css/main.6e877d96.chunk.css",
-    "main.js": "/react-21s-final-project-1/static/js/main.fcc0a93d.chunk.js",
-    "main.js.map": "/react-21s-final-project-1/static/js/main.fcc0a93d.chunk.js.map",
+    "main.css": "/react-21s-final-project-1/static/css/main.b344e213.chunk.css",
+    "main.js": "/react-21s-final-project-1/static/js/main.dc365709.chunk.js",
+    "main.js.map": "/react-21s-final-project-1/static/js/main.dc365709.chunk.js.map",
     "runtime-main.js": "/react-21s-final-project-1/static/js/runtime-main.d1f365db.js",
     "runtime-main.js.map": "/react-21s-final-project-1/static/js/runtime-main.d1f365db.js.map",
     "static/js/2.0fb68c70.chunk.js": "/react-21s-final-project-1/static/js/2.0fb68c70.chunk.js",
     "static/js/2.0fb68c70.chunk.js.map": "/react-21s-final-project-1/static/js/2.0fb68c70.chunk.js.map",
     "index.html": "/react-21s-final-project-1/index.html",
-    "static/css/main.6e877d96.chunk.css.map": "/react-21s-final-project-1/static/css/main.6e877d96.chunk.css.map",
+    "static/css/main.b344e213.chunk.css.map": "/react-21s-final-project-1/static/css/main.b344e213.chunk.css.map",
     "static/js/2.0fb68c70.chunk.js.LICENSE.txt": "/react-21s-final-project-1/static/js/2.0fb68c70.chunk.js.LICENSE.txt",
     "static/media/HomepageGif3.59598e51.gif": "/react-21s-final-project-1/static/media/HomepageGif3.59598e51.gif",
     "static/media/Localista.af8f8ba5.jpg": "/react-21s-final-project-1/static/media/Localista.af8f8ba5.jpg",
@@ -22,12 +22,13 @@
     "static/media/open.c30cda67.png": "/react-21s-final-project-1/static/media/open.c30cda67.png",
     "static/media/phone-call.d3584894.png": "/react-21s-final-project-1/static/media/phone-call.d3584894.png",
     "static/media/rating.e6d7524f.png": "/react-21s-final-project-1/static/media/rating.e6d7524f.png",
+    "static/media/share.2c2d0152.png": "/react-21s-final-project-1/static/media/share.2c2d0152.png",
     "static/media/sitora.5f8595b7.jpg": "/react-21s-final-project-1/static/media/sitora.5f8595b7.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d1f365db.js",
     "static/js/2.0fb68c70.chunk.js",
-    "static/css/main.6e877d96.chunk.css",
-    "static/js/main.fcc0a93d.chunk.js"
+    "static/css/main.b344e213.chunk.css",
+    "static/js/main.dc365709.chunk.js"
   ]
 }
