@@ -159,7 +159,7 @@ function RestaurantDetails() {
           <div className='fff'>
             <img src={LocationIcon} className='Icons' alt='Location' />
             {restaurant && restaurant.formatted_address && (
-              <h5>Address: {restaurant.formatted_address}</h5>
+              <h5>{restaurant.formatted_address}</h5>
             )}
           </div>
           <Map restaurants={[restaurant]} />

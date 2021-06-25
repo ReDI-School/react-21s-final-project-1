@@ -3,6 +3,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import HomePageGif from '../assets/HomepageGif3.gif';
+import share from '../assets/share.png';
 
 function ListOfRestaurants() {
   const [restaurants, setRestaurants] = useState(null);
@@ -117,25 +118,25 @@ function ListOfRestaurants() {
                   <Link to={`/ListOfRestaurants/${restaurant.id}`}>
                     <div className='restaurant-info'>
                       <div className='restaurant-name-cuisine-icon'>
-                        <img
+                        {/* <img
                           className='restaurant-icon'
                           src={restaurant.icon}
                           alt='icon'
                           width='45px'
                           height='45px'
-                        />
+                        /> */}
                         <div className='restaurant-title-rating'>
                           <div className='restaurant-title'>
                             <h1>{restaurant.name}</h1>
                           </div>
-                          <div className='restaurant-rating'>
-                            <h4>
-                              <span>&#11088; </span>
-                              {restaurant.rating}
-                              <span> ({restaurant.user_ratings_total}) - </span>
-                              {restaurant.cuisine}
-                            </h4>
-                          </div>
+                        </div>
+                        <div className='restaurant-rating'>
+                          <h4>
+                            <span>&#11088; </span>
+                            {restaurant.rating}
+                            <span> ({restaurant.user_ratings_total}) - </span>
+                            {restaurant.cuisine}
+                          </h4>
                         </div>
                       </div>
                       <div className='restaurant-image'>
@@ -143,11 +144,11 @@ function ListOfRestaurants() {
                       </div>
                       <div className='restaurant-rate-price'>
                         <div className='address'>
-                          {' '}
                           <h3>address:</h3>
                           <span>{restaurant.formatted_address}</span>
                         </div>
                       </div>
+
                       <div className='restaurant-status'>
                         <div className='status-in'>
                           {restaurant && restaurant.delivery && (
@@ -160,19 +161,24 @@ function ListOfRestaurants() {
                               {restaurant.pickup ? 'Pickup' : null}
                             </h5>
                           )}
-                          {restaurant && restaurant.open_now && (
-                            <h5 className='open'>
-                              {restaurant.open_now ? 'Open' : null}
-                            </h5>
-                          )}
-                          {restaurant && restaurant.open_now && (
-                            <h5 className='close'>
-                              {restaurant.open_now ? 'Close' : null}
-                            </h5>
-                          )}
+                          {restaurant &&
+                            restaurant.opening_hours &&
+                            restaurant.opening_hours.open_now && (
+                              <h5 className='open'>
+                                {restaurant.opening_hours.open_now
+                                  ? 'Open'
+                                  : 'Close'}
+                              </h5>
+                            )}
                         </div>
-                        <div>
-                          <h1>&#9825;</h1>
+                        <div className='like-share'>
+                          <div>
+                            <h1>&#9825;</h1>
+                          </div>
+
+                          <div>
+                            <img width='15px' src={share} alt='share' />
+                          </div>
                         </div>
                       </div>
                     </div>
