@@ -20,14 +20,14 @@ a:active {
 :root {
   --button-color: #fd9b4570;
   --button-hover-color: #b86914de;
-  --search-hover-color: #e0dedc;
+  --search-hover-color: #b8b3ae;
   --info-card-background-color: #5ab4f026;
   --text-color: rgb(3, 3, 3);
-  --restaurant-card-color: #fd9b4570;
+  --restaurant-card-color: #eb8a0c70;
   --Nav-text-color: #323235;
-  --background-color: #fdfdfc;
+  --background-color: rgb(246, 242, 242);
   --nav-background-color: #f8ae60;
-  --search-bar-background-color: rgb(243, 243, 236);
+  --search-bar-background-color: #fd9b4570;
 }
 .aa {
   color: #d7cbb2, #fceed8, #d88e35, #d27c1f, #deb48e, #d06550;
@@ -54,6 +54,7 @@ body,
 
 .about-page {
   background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 nav {
@@ -425,6 +426,7 @@ h2 {
 }
 
 .singleRestaurant {
+  color: var(--text-color);
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
@@ -572,6 +574,7 @@ h2 {
   min-height: 7%;
   min-width: 100%;
   background-color: var(--nav-background-color);
+  color: var(--text-color);
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -640,7 +643,7 @@ h2 {
     width: 300px;
     box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
     margin-bottom: 15px;
-    height: 355px;
+    height: 380px;
     color: var(--text-color);
   }
   .restaurant-info {
